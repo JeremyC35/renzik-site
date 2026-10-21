@@ -33,6 +33,18 @@ export function parseAllowedOrigins(value: string | undefined): string[] {
     .filter(Boolean);
 }
 
+/**
+ * ALLOWED_ORIGINS plus this deployment's own Vercel URLs (system env vars set by Vercel). Every preview
+ * gets a new URL, so a fixed list can't name it in advance. Allowing the site's own origin is still a
+ * same-site check.
+ */
+export function resolveAllowedOrigins(env: Record<string, string | undefined>): string[] {
+  const own = [env.VERCEL_URL, env.VERCEL_BRANCH_URL, env.VERCEL_PROJECT_PRODUCTION_URL]
+    .filter((host): host is string => Boolean(host))
+    .map((host) => `https://${host}`);
+  return [...new Set([...parseAllowedOrigins(env.ALLOWED_ORIGINS), ...own])];
+}
+
 const json = (
   status: number,
   body: { ok: true } | { ok: false; error: string; fields?: Record<string, string> },

@@ -4,6 +4,7 @@ import {
   MAX_BODY_BYTES,
   methodNotAllowed,
   parseAllowedOrigins,
+  resolveAllowedOrigins,
   type ContactDeps,
 } from "@/lib/contact-handler";
 import { createMemoryLimiter } from "@/lib/ratelimit";
@@ -176,5 +177,24 @@ describe("parseAllowedOrigins", () => {
       "http://localhost:3000",
     ]);
     expect(parseAllowedOrigins(undefined)).toEqual([]);
+  });
+});
+
+describe("resolveAllowedOrigins", () => {
+  it("adds the deployment's own Vercel URLs and dedupes", () => {
+    expect(
+      resolveAllowedOrigins({
+        ALLOWED_ORIGINS: "https://renzik.example",
+        VERCEL_URL: "renzik-site-abc123-renzik.vercel.app",
+        VERCEL_BRANCH_URL: "renzik-site-git-main-renzik.vercel.app",
+      }),
+    ).toEqual([
+      "https://renzik.example",
+      "https://renzik-site-abc123-renzik.vercel.app",
+      "https://renzik-site-git-main-renzik.vercel.app",
+    ]);
+  });
+  it("is only the configured list when not on Vercel", () => {
+    expect(resolveAllowedOrigins({ ALLOWED_ORIGINS: "http://localhost:3000" })).toEqual(["http://localhost:3000"]);
   });
 });
