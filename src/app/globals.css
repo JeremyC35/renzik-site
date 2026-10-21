@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Tailwind's default palette is cleared so components can only use these.
+ * Contrast (WCAG 2.x): ink/paper 14.98, stone/paper 6.80, pine/paper 5.39, paper/pine 5.39,
+ * paper/pine-deep 7.95, error/paper 5.71. Stone borders on paper 6.80 (non-text minimum is 3:1).
+ */
+@theme {
+  --color-*: initial;
+  --color-pine: #0f6e56; /* brand primary */
+  --color-pine-deep: #0a5241; /* hover / pressed on pine */
+  --color-paper: #f1efe8; /* page background (brand paper, from the logo) */
+  --color-ink: #1c1b17; /* text (brand ink, from the logo) */
+  --color-stone: #54524a; /* secondary text and form borders */
+  --color-error: #b42318; /* form errors */
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale (rem): 0.875 / 1 / 1.125 / 1.25 / 1.5 / 2 / 2.75 / 3.5 */
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.025em;
+  --text-headline: 2.75rem;
+  --text-headline--line-height: 1.08;
+  --text-headline--letter-spacing: -0.02em;
+
+  --radius-ui: 4px; /* the only radius: buttons, inputs, focus rings */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+    border-radius: var(--radius-ui);
+  }
+  /* On the pine band, the focus ring flips to paper so it stays visible. */
+  .on-pine :focus-visible {
+    outline-color: var(--color-paper);
+  }
+  ::selection {
+    background: var(--color-pine);
+    color: var(--color-paper);
+  }
+  [id] {
+    scroll-margin-top: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
