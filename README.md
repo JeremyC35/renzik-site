@@ -2,7 +2,7 @@
 
 The Renzik landing page: one static page for contractors, Privacy and Terms, and a single serverless endpoint (`POST /api/contact`) that emails leads through Resend. Built from `docs/renzik-landing-page-claude-code-prompt.md`.
 
-**Status:** built and verified locally. Not yet pushed or deployed. See `GO-LIVE.md`.
+**Status:** preview deployed at https://renzik-site-git-preview-renzik.vercel.app (private, behind Vercel login). The form needs the Resend and Upstash keys before it can send. Production is blocked until every `TODO_` is filled. See `GO-LIVE.md`.
 
 ## Stack
 Next.js 16 (App Router, static prerender) · Tailwind 4 · zod · Resend · Upstash Ratelimit · Vitest. Why each one is here: `DECISIONS.md`.

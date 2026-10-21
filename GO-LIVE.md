@@ -1,5 +1,10 @@
 # Go-live checklist
 
+## How deploys work today
+- Repo: `JeremyC35/renzik-site` (private). Vercel project `renzik-site` on the **Renzik** team.
+- **Preview** = the `preview` branch → https://renzik-site-git-preview-renzik.vercel.app (behind Vercel Authentication, noindex). Update it with `git push origin main:preview`.
+- **Production** = the `main` branch. Every push to `main` triggers a production build that **fails on purpose** while any `TODO_` remains (the placeholder guard). That's expected until step 4 below is done.
+
 Follow in order. Nothing here needs code changes beyond `src/config/site.ts` and the env vars.
 
 ## 1. Domain
