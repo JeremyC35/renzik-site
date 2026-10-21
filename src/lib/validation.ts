@@ -1,13 +1,13 @@
 import { z } from "zod";
 import { trades } from "@/config/site";
+import { LIMITS, type ContactField } from "@/lib/limits";
 
-export const LIMITS = {
-  name: 100,
-  business: 120,
-  phone: 30,
-  email: 254,
-  message: 1000,
-} as const;
+export { LIMITS };
+export type { ContactField };
+
+// Zod probes `new Function("")` to decide whether to compile validators. Our CSP blocks eval, so the
+// probe shows up as a CSP violation. jitless skips the probe; validation works the same.
+z.config({ jitless: true });
 
 /** Minimum time between the form rendering and submit. Anything faster is a bot. */
 export const MIN_FILL_MS = 3000;
@@ -62,7 +62,6 @@ export const contactSchema = z.object({
 
 export type ContactInput = z.input<typeof contactSchema>;
 export type Lead = z.output<typeof contactSchema>;
-export type ContactField = keyof ContactInput;
 
 /** What the browser actually posts: the fields plus the two spam traps. Unknown keys are stripped. */
 export const submissionSchema = contactSchema.extend({

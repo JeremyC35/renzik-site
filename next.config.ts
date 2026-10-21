@@ -40,6 +40,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   cacheComponents: true,
   partialPrefetching: true,
+  experimental: {
+    // ~6 KB of Tailwind CSS inlined into <head>: no render-blocking stylesheet for first-time visitors.
+    inlineCss: true,
+  },
   env: {
     // Copyright year, computed once at build time.
     BUILD_YEAR: String(new Date().getFullYear()),

@@ -15,8 +15,8 @@ export function Problem() {
             voicemail, and calls the next contractor on the list. By morning, that job is gone.
           </p>
           <p>
-            Quotes go the same way. You send an estimate, the week gets busy, nobody follows up, and the customer
-            books whoever called them back first.
+            Quotes go the same way. You send an estimate, the week gets busy, nobody follows up, and the customer books
+            whoever called them back first.
           </p>
           {statSource && (
             <p className="border-l-4 border-pine pl-5 text-xl font-semibold">

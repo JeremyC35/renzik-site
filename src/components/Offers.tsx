@@ -11,12 +11,14 @@ const others = [
   {
     name: "Missed call text-back",
     outcome: "A text back within seconds.",
-    detail: "When nobody picks up, the caller gets a text right away, so the conversation stays with you instead of moving on.",
+    detail:
+      "When nobody picks up, the caller gets a text right away, so the conversation stays with you instead of moving on.",
   },
   {
     name: "Lead reactivation",
     outcome: "Old quotes, followed up.",
-    detail: "It reaches back out to past estimates and past customers who never booked, and hands you the ones ready to talk.",
+    detail:
+      "It reaches back out to past estimates and past customers who never booked, and hands you the ones ready to talk.",
   },
 ];
 
@@ -37,7 +39,7 @@ export function Offers() {
               <article key={offer.name} className="border-t border-stone/50 pt-6">
                 <h3 className="text-xl font-bold">{offer.name}</h3>
                 <p className="mt-2 text-lg font-semibold text-pine">{offer.outcome}</p>
-                <p className="mt-3 leading-relaxed">{offer.detail}</p>
+                <p className="mt-3 max-w-[60ch] leading-relaxed">{offer.detail}</p>
               </article>
             ))}
           </div>

@@ -8,8 +8,8 @@ export function SiteHeader() {
   return (
     <header className="border-b border-stone/25">
       <Container className="flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
-        <Link href="/" className="shrink-0" aria-label={`${site.tradeName} home`}>
-          <Logo height={34} className="h-8 w-auto md:h-[2.375rem]" />
+        <Link href="/" className="inline-flex min-h-11 shrink-0 items-center" aria-label={`${site.tradeName} home`}>
+          <Logo height={34} className="h-8 w-auto md:h-[2.375rem]" priority />
         </Link>
         <div className="flex items-center gap-5">
           {phone && (

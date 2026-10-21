@@ -9,7 +9,11 @@ const ctaBase =
   "inline-flex min-h-11 items-center justify-center rounded-ui px-5 py-2.5 text-base font-semibold whitespace-nowrap transition-colors";
 
 /** The one call to action on the page. "Book a call" everywhere, pointing at the form. */
-export function BookCallLink({ tone = "pine", className = "", ...rest }: { tone?: "pine" | "paper" } & ComponentProps<"a">) {
+export function BookCallLink({
+  tone = "pine",
+  className = "",
+  ...rest
+}: { tone?: "pine" | "paper" } & ComponentProps<"a">) {
   const colors =
     tone === "pine"
       ? "bg-pine text-paper hover:bg-pine-deep active:bg-pine-deep"

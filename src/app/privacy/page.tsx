@@ -14,8 +14,8 @@ export default function PrivacyPage() {
   return (
     <LegalPage title="Privacy policy">
       <p>
-        This policy explains what {who} (&ldquo;Renzik,&rdquo; &ldquo;we&rdquo;) collects through this website and
-        what we do with it.
+        This policy explains what {who} (&ldquo;Renzik,&rdquo; &ldquo;we&rdquo;) collects through this website and what
+        we do with it.
       </p>
 
       <h2>What we collect</h2>
@@ -28,10 +28,10 @@ export default function PrivacyPage() {
 
       <h2>Where it goes</h2>
       <p>
-        When you send the form, your details are emailed to Renzik through our email provider. The website does not
-        save them in a database. To stop abuse of the form, your IP address is held briefly (about 10 minutes) by
-        our rate-limiting provider, and our hosting provider keeps standard technical logs. Those logs do not
-        include what you typed into the form.
+        When you send the form, your details are emailed to Renzik through our email provider. The website does not save
+        them in a database. To stop abuse of the form, your IP address is held briefly (about 10 minutes) by our
+        rate-limiting provider, and our hosting provider keeps standard technical logs. Those logs do not include what
+        you typed into the form.
       </p>
 
       <h2>Cookies and tracking</h2>
@@ -40,14 +40,14 @@ export default function PrivacyPage() {
       <h2>How we use it</h2>
       <p>
         We use your information to answer your request and talk with you about our services. We&apos;ll only call or
-        text you using automated technology if you gave consent on the form, and consent is never a condition of
-        buying anything from us.
+        text you using automated technology if you gave consent on the form, and consent is never a condition of buying
+        anything from us.
       </p>
 
       <h2>Opting out</h2>
       <p>
-        Reply STOP to any text from us to stop texts. To stop calls or emails, or to ask us to delete your
-        information, contact us at <LegalContact />.
+        Reply STOP to any text from us to stop texts. To stop calls or emails, or to ask us to delete your information,
+        contact us at <LegalContact />.
       </p>
 
       <h2>We don&apos;t sell your data</h2>

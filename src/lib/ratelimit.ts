@@ -10,7 +10,10 @@ export interface Limiter {
 type Env = Record<string, string | undefined>;
 
 /** In-memory sliding window. Local development only: it resets on restart and isn't shared across instances. */
-export function createMemoryLimiter(requests: number = RATE_LIMIT.requests, windowMs: number = RATE_LIMIT.windowMs): Limiter {
+export function createMemoryLimiter(
+  requests: number = RATE_LIMIT.requests,
+  windowMs: number = RATE_LIMIT.windowMs,
+): Limiter {
   const hits = new Map<string, number[]>();
   return {
     async limit(id) {
@@ -40,7 +43,13 @@ export function getLimiter(env: Env = process.env): Limiter | null {
     });
   }
   if (env.VERCEL_ENV) {
-    console.error(JSON.stringify({ ts: new Date().toISOString(), outcome: "config-error", detail: "rate limiter not configured: UPSTASH_REDIS_REST_URL/TOKEN missing" }));
+    console.error(
+      JSON.stringify({
+        ts: new Date().toISOString(),
+        outcome: "config-error",
+        detail: "rate limiter not configured: UPSTASH_REDIS_REST_URL/TOKEN missing",
+      }),
+    );
     return null;
   }
   if (!warned) {

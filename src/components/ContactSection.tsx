@@ -20,7 +20,10 @@ export function ContactSection() {
             <p className="mt-6 text-stone">
               Prefer to reach us directly?{" "}
               {phone && (
-                <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="font-semibold text-ink underline underline-offset-4">
+                <a
+                  href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                  className="font-semibold text-ink underline underline-offset-4"
+                >
                   {phone}
                 </a>
               )}

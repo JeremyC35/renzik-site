@@ -13,8 +13,8 @@ export function TheMath() {
             If it recovers one roofing job a month, it pays for itself many times over.
           </p>
           <p className="mt-5 max-w-[60ch] text-stone">
-            That&apos;s an example, not a promise. What it recovers depends on how many calls you miss today and how
-            you follow up on quotes.
+            That&apos;s an example, not a promise. What it recovers depends on how many calls you miss today and how you
+            follow up on quotes.
           </p>
         </div>
       </Container>

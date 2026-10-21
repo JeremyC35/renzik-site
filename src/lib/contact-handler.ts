@@ -33,8 +33,11 @@ export function parseAllowedOrigins(value: string | undefined): string[] {
     .filter(Boolean);
 }
 
-const json = (status: number, body: { ok: true } | { ok: false; error: string; fields?: Record<string, string> }, headers?: HeadersInit) =>
-  Response.json(body, { status, headers: { "Cache-Control": "no-store", ...headers } });
+const json = (
+  status: number,
+  body: { ok: true } | { ok: false; error: string; fields?: Record<string, string> },
+  headers?: HeadersInit,
+) => Response.json(body, { status, headers: { "Cache-Control": "no-store", ...headers } });
 
 const fail = (status: number, error: string, headers?: HeadersInit) => json(status, { ok: false, error }, headers);
 
@@ -115,7 +118,11 @@ export function createContactHandler(deps: ContactDeps) {
     const parsed = submissionSchema.safeParse(body);
     if (!parsed.success) {
       record("rejected-validation");
-      return json(400, { ok: false, error: "Some fields need fixing. Check the highlighted fields and try again.", fields: fieldErrors(parsed.error) });
+      return json(400, {
+        ok: false,
+        error: "Some fields need fixing. Check the highlighted fields and try again.",
+        fields: fieldErrors(parsed.error),
+      });
     }
 
     const send = deps.getSender();

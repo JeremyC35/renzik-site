@@ -31,24 +31,26 @@ const faqs = [
 export function Faq() {
   return (
     <section aria-labelledby="faq-title" className="border-t border-stone/25 py-16 md:py-24">
-      <Container className="max-w-3xl lg:max-w-3xl">
-        <SectionHeading id="faq-title">Questions contractors ask</SectionHeading>
-        <div className="mt-8 border-b border-stone/40">
-          {faqs.map(({ q, a }) => (
-            <details key={q} className="group border-t border-stone/40">
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-semibold [&::-webkit-details-marker]:hidden">
-                {q}
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 20 20"
-                  className="size-5 shrink-0 text-pine transition-transform group-open:rotate-45"
-                >
-                  <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2.25" strokeLinecap="square" />
-                </svg>
-              </summary>
-              <p className="max-w-[62ch] pb-5 leading-relaxed">{a}</p>
-            </details>
-          ))}
+      <Container>
+        <div className="max-w-3xl">
+          <SectionHeading id="faq-title">Questions contractors ask</SectionHeading>
+          <div className="mt-8 border-b border-stone/40">
+            {faqs.map(({ q, a }) => (
+              <details key={q} className="group border-t border-stone/40">
+                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-semibold [&::-webkit-details-marker]:hidden">
+                  {q}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                    className="size-5 shrink-0 text-pine transition-transform group-open:rotate-45"
+                  >
+                    <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2.25" strokeLinecap="square" />
+                  </svg>
+                </summary>
+                <p className="max-w-[62ch] pb-5 leading-relaxed">{a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

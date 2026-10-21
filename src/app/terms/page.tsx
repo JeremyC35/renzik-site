@@ -14,8 +14,8 @@ export default function TermsPage() {
   return (
     <LegalPage title="Terms of use">
       <p>
-        These terms cover your use of this website, which is run by {who} (&ldquo;Renzik,&rdquo; &ldquo;we&rdquo;).
-        By using the site, you agree to them.
+        These terms cover your use of this website, which is run by {who} (&ldquo;Renzik,&rdquo; &ldquo;we&rdquo;). By
+        using the site, you agree to them.
       </p>
 
       <h2>This site is for information</h2>
@@ -38,9 +38,9 @@ export default function TermsPage() {
 
       <h2>Limitation of liability</h2>
       <p>
-        The site is provided &ldquo;as is.&rdquo; To the fullest extent the law allows, Renzik isn&apos;t liable for
-        any indirect, incidental or consequential damages arising from your use of the site, or for relying on
-        anything published on it.
+        The site is provided &ldquo;as is.&rdquo; To the fullest extent the law allows, Renzik isn&apos;t liable for any
+        indirect, incidental or consequential damages arising from your use of the site, or for relying on anything
+        published on it.
       </p>
 
       <h2>Governing law</h2>
