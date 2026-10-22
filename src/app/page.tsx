@@ -24,7 +24,6 @@ function structuredData() {
     description: site.industry,
     url: siteUrl,
     logo: `${siteUrl}/brand/renzik-monogram.svg`,
-    areaServed: { "@type": "AdministrativeArea", name: `${site.serviceArea} (${site.serviceAreaDetail})` },
   };
   if (legalName) data.legalName = legalName;
   if (phone) data.telephone = phone;

@@ -65,3 +65,6 @@ Every deviation from `docs/renzik-landing-page-claude-code-prompt.md`, and every
 No UI kits, animation libraries, icon packs, analytics or third-party embeds. Icons are two inline SVGs (the FAQ plus/close sign). Prettier was run through `npx` with `.prettierrc.json` (width 120) and isn't installed as a dependency.
 
 `npm audit --omit=dev` reports 0 vulnerabilities. The 5 "high" findings are in ESLint's dev-only dependency chain (`braces` via `eslint-config-next`) and never ship.
+
+## Brand reach
+- **D36 · No city or region anywhere on the site** (2026-10-21, Jeremy). The prompt's "Central New York" service-area line, hero mention, meta description and JSON-LD `areaServed` were removed: stamping a market everywhere limits the brand. Overrides the prompt's business facts.

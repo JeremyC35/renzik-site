@@ -19,7 +19,7 @@ export function Hero() {
           voicemail.
         </h1>
         <p className="mt-6 max-w-[46ch] text-lg leading-relaxed md:text-xl">
-          Built for roofing, HVAC, plumbing and general contractors across Central New York.
+          Built for roofing, HVAC, plumbing and general contractors.
         </p>
         <BookCallLink tone="paper" className="mt-9" />
       </Container>

@@ -13,7 +13,6 @@ export function SiteFooter() {
       <Container className="grid gap-8 text-sm text-stone md:grid-cols-2 md:items-end">
         <div className="space-y-3">
           <Logo height={32} className="h-8 w-auto" />
-          <p>{site.serviceAreaLine}</p>
           {address && <p>{address}</p>}
           {email && (
             <p>

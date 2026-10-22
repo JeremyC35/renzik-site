@@ -8,9 +8,7 @@ export const site = {
   tradeName: "Renzik",
   lockupName: "Renzik Automated Services",
   industry: "AI call answering and lead follow-up for home service contractors",
-  serviceArea: "Central New York",
-  serviceAreaDetail: "Utica, Rome, Syracuse and surrounding areas",
-  serviceAreaLine: "Serving Central New York",
+  // No city or region anywhere customer-facing: Renzik isn't tied to one market (DECISIONS.md D36).
 
   legalEntityName: "TODO_LEGAL_ENTITY_NAME", // LLC filing pending
   mailingAddress: "TODO_MAILING_ADDRESS", // business mailing address, not a home address

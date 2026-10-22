@@ -13,7 +13,7 @@ const archivo = Archivo({
 
 const title = "Renzik — AI call answering and follow-up for contractors";
 const description =
-  "Renzik builds AI systems for contractors in Central New York that answer every call and follow up with leads, so jobs stop going to voicemail.";
+  "Renzik builds AI systems for contractors that answer every call and follow up with leads, so jobs stop going to voicemail.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
